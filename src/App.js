@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
 import ApartmentsList from './components/ApartmentsList'
-import ApartmentsDetails from './components/ApartmentDetails'
+import ApartmentsDetails from './components/ApartmentsDetails'
 import CreateApartment from './components/CreateApartment'
 
 function App() {
