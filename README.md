@@ -1,4 +1,4 @@
-# React IronBnB
+# Warriors React IronBnB
 
 
 LAB/Exercise to practice React concepts (React Router, props, state, useEffect, API requests...)
@@ -37,7 +37,7 @@ Sitemap/Wireframes:
 | `POST`    | `/apartments`     | { <br />  img: String, <br />  title: String,<br />  pricePerDay: Number <br />} | Creates a new apartment document.                  |
 
 
-- As you can see, the it follows REST.
+- As you can see, it follows REST.
 - Responses are in JSON.
 
 
