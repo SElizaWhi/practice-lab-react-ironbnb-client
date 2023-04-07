@@ -4,16 +4,15 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 
 function ApartmentsDetails() {
-  const { id } = useParams();
-  console.log(id)
-  const [apartment, setApartment] = useState({});
+	const { id } = useParams()
+	const [apartment, setApartment] = useState({})
 
-  useEffect(() => {
-    axios
-      .get(`https://ironbnb-m3.herokuapp.com/apartments/${id}`)
-      .then((response) => setApartment(response.data))
-      .catch((error) => console.log(error));
-  }, []);
+	useEffect(() => {
+		axios
+			.get(`${process.env.REACT_APP_BASE_URL}/apartments/${id}`)
+			.then((response) => setApartment(response.data))
+			.catch((error) => console.log(error))
+	}, [id])
 
   return (
     <section class="vh-100 bg-image ">
