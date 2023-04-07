@@ -1,26 +1,28 @@
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+import {useEffect,useState} from "react"
 function ApartmentsList(props) {
-  console.log(props);
-  return (
-    <div>
-        {props.apartmentsArr.map((apartment) => {
-          return (
-            <Link to={`/${apartment._id}`}>
-              <img
-                src={
-                  "https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/react-lists/ironbnb-house." +
-                  apartment._id() +
-                  ".png"
-                }
-                alt="apartment"
-              />
-              {apartment.title}
-            </Link>
-          );
-        })}
-      </div>
+ 
+	const [apartmentsArr,setApartmentsArr]=useState([])
+  useEffect(() => {
+		axios.get('https://ironbnb-m3.herokuapp.com/apartments').then((response)=>setApartmentsArr(response.data))
+
+	}, [])
+
+  
+	return (
+    <div className="row-4">
+      
+      {apartmentsArr.map((apartment) => {
+        return (
+          <Link to={`/apartments/${apartment._id}`}>
+            <img src={apartment.img} alt="apartment" />
+            {apartment.title}
+          </Link>
+        );
+      })}
+    </div>
   );
 }
 
-export default ApartmentsList;
+export default ApartmentsList
