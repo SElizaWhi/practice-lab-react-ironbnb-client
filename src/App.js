@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
 import ApartmentsList from './components/ApartmentsList'
-import ApartmentDetails from './components/ApartmentDetails'
+import ApartmentsDetails from './components/ApartmentDetails'
 import CreateApartment from './components/CreateApartment'
 import axios from 'axios'
 
@@ -42,7 +42,7 @@ useEffect(() => {
 					<Route
 						exact
 						path='/apartments/:id'
-						component={ApartmentDetails}
+						component={ApartmentsDetails}
 					/>
 					<Route
 						exact
