@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
 import ApartmentsList from './components/ApartmentsList'
-import ApartmentsDetails from './components/ApartmentDetails'
+import ApartmentsDetails from './components/ApartmentsDetails'
 import CreateApartment from './components/CreateApartment'
 import axios from 'axios'
 
@@ -15,7 +15,7 @@ const [apartmentsArr, setApartmentsArr] = useState([]);
 
 useEffect(() => {
   axios
-    .get(baseURL + "/countries")
+    .get(baseURL + "/apartments")
     .then((response) => {
       setApartmentsArr(response.data);
     })
@@ -30,24 +30,20 @@ useEffect(() => {
 				<NavBar />
 				<Routes>
 					<Route
-						exact
 						path='/'
-						component={HomePage}
+						element={<HomePage/>}
 					/>
 					<Route
-						exact
 						path='/apartments'
-						component={ApartmentsList}
+						element={<ApartmentsList/>}
 					/>
 					<Route
-						exact
 						path='/apartments/:id'
-						component={ApartmentsDetails}
+						element={<ApartmentsDetails/>}
 					/>
 					<Route
-						exact
 						path='/apartments/create'
-						component={CreateApartment}
+						element={<CreateApartment/>}
 					/>
 				</Routes>
 			</div>
